@@ -1,11 +1,12 @@
 ---
 title: "Nursing Home Case Study"
 author: "Zhouming Sun"
-date: "2025-02-08"
-output:
-  word_document: default
+date: "2025-03-16"
+output: 
+  github_document: default
   html_document: default
   pdf_document: default
+  word_document: default
 header-includes: \usepackage{fvextra} \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
 
