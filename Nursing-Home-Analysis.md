@@ -1,9 +1,20 @@
 Nursing Home Case Study
 ================
 Zhouming Sun
-2025-03-16
+2025-05-17
 
   
+
+## Abstract
+
+Nursing plays a critical role in long term care. This case study is an
+investigation into nurse staffing data available at
+<https://data.cms.gov/quality-of-care/payroll-based-journal-daily-nurse-staffing>
+and <https://data.cms.gov/provider-data/topics/nursing-homes> in order
+to draw a correlation between nurse staffing metrics and overall quality
+of care that impacts patients. In brief, when the daily mean nurse hours
+are above 4 per resident, facilities are given higher ratings and
+receive fewer penalties.
 
 ## Correlations and Plots
 
@@ -73,10 +84,9 @@ case: staff turnover, administrator turnover, reported facility
 incidents, substantiated complaints, penalties, and payment denials from
 Medicaid or Medicare.
 
-So it might be a good idea to avoid association with these poorly rated
-facilities. Alternatively, they could be prime customers for
-contractors. However, it would be in bad taste to simply churn a stream
-of nurse contractors through terribly managed facilities.
+These poorly rated facilities deserve critical examination. They are
+delivering an overall worse quality of care, and resulting in high staff
+turnover.
 
 The last graph demonstrates a correlation between mean nurse hours per
 resident and overall rating. Facilities that are struggling with low
@@ -85,9 +95,9 @@ Daily Mean Nurse Hours are above 4 per resident.
 
 ## Facility Ownership
 
-Being aware of poorly managed and rated facilities is nice, but the
-*NH_Ownership_Nov2024.csv* file can be utilized to identify the owners
-responsible for the penalties. The following code connects each
+Being aware of poorly managed and rated facilities is a good start, but
+the *NH_Ownership_Nov2024.csv* file can be utilized to identify the
+owners responsible for the penalties. The following code connects each
 facility’s penalties to the owners at the time. This is to not count
 cases for owners if their association date comes after the penalty date.
 In other words, if you just joined a facility, you are not responsible
@@ -188,10 +198,14 @@ head(count_owner_penalty_with_date[order(-count_owner_penalty_with_date$n), ] , 
     ## 14451                                      MARGULIES, ZISHA 147
     ## 2197                                          BLAKE, MALISA 146
 
-We can use this list as a blacklist of sorts. It would be advisable to
-avoid working with facilities that are associated with any of these
-owners, as they have a history of collecting penalties, which is
-negatively correlated with Overall Rating and Staff Turnover.
+This list can be used as a blacklist of sorts. It would be advisable to
+avoid facilities that are associated with any of these owners, as they
+have a history of collecting penalties, which is negatively correlated
+with Overall Rating, Staff Turnover, and therefore quality of care.
+
+A case can be made for giving repeat offenders increasingly larger
+penalties, as the current punishment structure does not seem to deter
+the most penalized owners from continuing their poor management.
 
 ## Maps using FIPS Codes
 
@@ -254,11 +268,10 @@ facilities are not evenly spread throughout the United States.
 
 ## Conclusions
 
-If possible, avoid doing business known penalty-collecting owners and
-facilities. If that is unavoidable, an entity should insist upon changes
-(that correlate with a better overall rating) before allowing them to
-match with its contractors. Adding enough nurses/staff such that the
-mean nurse staffing hours per resident per day is greater than 4 would
-be ideal. Perhaps requiring facilities to sign on multiple contractors
-at once could be a solution to the low rating and high nurse turnover
-problem.
+If possible, avoid doing business with known penalty-collecting owners
+and facilities. Facilities that seek to improve their quality of care
+would do well to add more nurses/staff such that the mean nurse staffing
+hours per resident per day is greater than 4.
+
+Further investigation into improving the worst-performing facilities
+might result in improved patient care and staff turnover rates.
