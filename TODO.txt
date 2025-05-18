@@ -1,0 +1,12 @@
+- ggplot2
+- linear regression where it makes sense/data allows
+- change/consider different boundary colors in FIPS codes maps
+- more correlations, perhaps looking at vaccination rates
+- look into medicare claims, are there any that are outliers/2 standard deviations 
+- plotting median household income per county, see if there are correlations? 
+  - median age per county? 
+- Average Number of Residents per Day ~ quality
+- With a Resident and Family Council ~  Overall Rating
+- combining graphs, plotting multiple variables against rating
+ (to keep the graph readable, I chose the n most correlated variables)
+ Complex model vs simple regression comparison in predicting quality 

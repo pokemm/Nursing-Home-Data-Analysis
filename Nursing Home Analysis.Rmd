@@ -23,7 +23,9 @@ First, a quick look into the *NH_ProviderInfo_Nov2024.csv* file reveals correlat
 ```{r providers turnover}
 providers <- read.csv(r"(C:\Users\pokem\Downloads\nursing_homes_including_rehab_services_current_data\NH_ProviderInfo_Nov2024.csv)")
 
-aggregate(Total.nursing.staff.turnover ~ Overall.Rating, data=providers, FUN = mean) %>% plot(main = "Overall Rating ~ Mean Total Nursing Staff Turnover")
+aggregate(Total.nursing.staff.turnover ~ Overall.Rating,
+          data=providers, 
+          FUN = mean) %>% plot(main = "Overall Rating ~ Mean Total Nursing Staff Turnover")
 
 ```
 
