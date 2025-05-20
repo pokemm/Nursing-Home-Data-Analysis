@@ -1,20 +1,20 @@
 Nursing Home Case Study
 ================
 Zhouming Sun
-2025-05-17
+2025-05-19
 
   
 
 ## Abstract
 
 Nursing plays a critical role in long term care. This case study is an
-investigation into nurse staffing data available at
+investigation into 2024 nurse staffing data available at
 <https://data.cms.gov/quality-of-care/payroll-based-journal-daily-nurse-staffing>
 and <https://data.cms.gov/provider-data/topics/nursing-homes> in order
-to draw a correlation between nurse staffing metrics and overall quality
-of care that impacts patients. In brief, when the daily mean nurse hours
-are above 4 per resident, facilities are given higher ratings and
-receive fewer penalties.
+to draw a correlation between nurse staffing metrics and the overall
+quality of care that impacts patients. In brief, when the daily mean
+nurse hours are above 4 per resident, facilities are given higher
+ratings and receive fewer penalties.
 
 ## Correlations and Plots
 
@@ -32,9 +32,7 @@ aggregate(Total.nursing.staff.turnover ~ Overall.Rating, data=providers, FUN = m
 ![](Nursing-Home-Analysis_files/figure-gfm/providers%20turnover-1.png)<!-- -->
 
 This demonstrates that high nursing staff turnover is correlated with a
-poor overall rating. If one is focused on contractor staffing data,
-which is not available in the *NH_ProviderInfo_Nov2024.csv* file, total
-nursing staff turnover will have to do as a proxy measurement.
+poor overall rating.
 
 The following graphs show several other correlations.
 
